@@ -20,7 +20,6 @@ Provide useRxjsStore Hooks for Components State Usage.
 
 - [x] Easy-to-use
 - [x] Fully TypeScript
-- [x] lint-staged support
 - [x] No `context`or `reducer` required
 - [x] Immutable by `immer`
 - [x] Async state flow by `rxjs`
