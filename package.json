@@ -4,10 +4,10 @@
   "description": "Rxjs store for react state management",
   "author": "21epub",
   "license": "MIT",
-  "homepage": "21epub/react-rxjs-store",
+  "homepage": "https://github.com/21epub/react-rxjs-store",
   "repository": {
     "type": "git",
-    "url": "git+21epub/react-rxjs-store.git"
+    "url": "git+https://github.com/21epub/react-rxjs-store.git"
   },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
