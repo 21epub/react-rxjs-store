@@ -1,6 +1,6 @@
 {
   "name": "@21epub/react-rxjs-store",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Rxjs store for react state management",
   "author": "21epub",
   "license": "MIT",
