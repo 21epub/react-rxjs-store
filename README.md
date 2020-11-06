@@ -64,8 +64,8 @@ const reducers: Reducers<State> = {
 export default new RxjsStore<State, Reducers<State>>(initState, reducers)
 ```
 
-```ts
-// Component.ts : Component Hooks Usage
+```tsx
+// Component.tsx : Component Hooks Usage
 
 import React from 'react'
 import store from './store'
@@ -89,6 +89,18 @@ const Component = () => {
 }
 
 export default Component
+```
+
+```ts
+// otherUtil.ts : subscribe to store state change
+
+import store from './store'
+
+store.observable$.subscribe( nextState => {
+  console.log(nextState)
+  ...
+})
+
 ```
 
 For Details: See Example

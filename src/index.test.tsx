@@ -98,5 +98,27 @@ describe('test rxjs store components hooks function', () => {
     expect(comp2.container.innerHTML).toContain(
       'The current state count is : 3'
     )
+    act(() => {
+      store.reducers.decrement(3)
+    })
+    expect(comp1.container.innerHTML).toContain(
+      'The current state count is : 0'
+    )
+    expect(comp2.container.innerHTML).toContain(
+      'The current state count is : 0'
+    )
+  })
+})
+
+describe('test rxjs store observable$ ', () => {
+  it('dispatch function test ', () => {
+    let result
+    store.observable$.subscribe((v) => {
+      result = v.count
+    })
+    act(() => {
+      store.reducers.increment(199)
+    })
+    expect(result).toBe(199)
   })
 })

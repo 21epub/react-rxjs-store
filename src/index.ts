@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Subject } from 'rxjs'
+import { Observable, Subject } from 'rxjs'
 import produce from 'immer'
 
 export type RxjsStoreReducerParam<S> = (state: S, ...args: any) => S
@@ -22,10 +22,12 @@ class RxjsStore<S, R extends RxjsStoreReducerParams<S>> {
   private state: S
   private stateSubject$: Subject<S>
   public reducers: RxjsStoreReducers<S, R>
+  public observable$: Observable<S>
 
   constructor(state: S, reducers: R) {
     this.state = state
     this.stateSubject$ = new Subject<S>()
+    this.observable$ = this.stateSubject$.asObservable()
     this.reducers = this.generateReducers(reducers)
   }
 
